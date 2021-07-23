@@ -1,0 +1,22 @@
+# ninja log v5
+10	93	6486718050541553	E:/MCP/Mock/application/project/Debug/Obj/startup/startup_MKL46Z4.o	111d4bda61dc304d
+489	522	6486718054891539	E:/MCP/Mock/application/project/Debug/Exe/app.srec	575327a8858ec66a
+339	458	6486714369078366	E:/MCP/Mock/application/project/Debug/List/app.map	8544fdedc7844dc
+99	312	6486718052751571	E:/MCP/Mock/application/project/Debug/Obj/startup/system_MKL46Z4.o	e3c7d5695e611a9a
+23	261	6486718052211582	E:/MCP/Mock/application/project/Debug/Obj/source/main.o	66c0300954d5e516
+4	278	6486718052251585	E:/MCP/Mock/application/project/Debug/Obj/drivers/Clock.o	755520e6b761d61f
+15	340	6486718052901540	E:/MCP/Mock/application/project/Debug/Obj/drivers/UART0.o	ed6b6e1325b798e1
+352	475	6486718054391559	E:/MCP/Mock/application/project/Debug/Exe/app.out	19c6b4c24c491d3c
+13	72	6486718596632970	E:/MCP/Mock/application/project/Debug/Obj/startup/startup_MKL46Z4.o	111d4bda61dc304d
+23	232	6486718597912955	E:/MCP/Mock/application/project/Debug/Obj/drivers/Clock.o	755520e6b761d61f
+31	261	6486718598352970	E:/MCP/Mock/application/project/Debug/Obj/startup/system_MKL46Z4.o	e3c7d5695e611a9a
+78	297	6486718598762953	E:/MCP/Mock/application/project/Debug/Obj/source/main.o	66c0300954d5e516
+2	328	6486718599002994	E:/MCP/Mock/application/project/Debug/Obj/drivers/UART0.o	ed6b6e1325b798e1
+343	481	6486718600663009	E:/MCP/Mock/application/project/Debug/Exe/app.out	8544fdedc7844dc
+343	481	6486718600663009	E:/MCP/Mock/application/project/Debug/List/app.map	8544fdedc7844dc
+515	537	6486718601303106	E:/MCP/Mock/application/project/Debug/Exe/app.srec	575327a8858ec66a
+3	186	6486719361152433	E:/MCP/Mock/application/project/Debug/Exe/app.out	19c6b4c24c491d3c
+201	238	6486719361752439	E:/MCP/Mock/application/project/Debug/Exe/app.srec	575327a8858ec66a
+2	332	6487217559985774	E:/MCP/Mock/application/project/Debug/Obj/source/main.o	66c0300954d5e516
+342	487	6487217561566076	E:/MCP/Mock/application/project/Debug/Exe/app.out	19c6b4c24c491d3c
+499	622	6487217562965777	E:/MCP/Mock/application/project/Debug/Exe/app.srec	575327a8858ec66a

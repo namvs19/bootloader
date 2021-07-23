@@ -1,0 +1,20 @@
+# ninja log v5
+2	244	6487214770000000	E:/MCP/Mock/bootloader/project/Debug/BrowseInfo/drivers/Flash.xcl	6127ee1fb6a320bd
+223	274	6487378202576649	E:/MCP/Mock/bootloader/project/Debug/BrowseInfo/bootloader_part1.pbi	8518bba6c5c6f53b
+2	123	6486347460000000	E:/MCP/Mock/bootloader/project/Debug/BrowseInfo/startup/system_MKL46Z4.xcl	2f7b15161801b90c
+5	217	6487378201996722	E:/MCP/Mock/bootloader/project/Debug/BrowseInfo/source/main.pbi	50552a6f5396c650
+281	334	6487378203176844	E:/MCP/Mock/bootloader/project/Debug/BrowseInfo/bootloader.pbd	7a7ee61172ec306b
+12	187	6486345120000000	E:/MCP/Mock/bootloader/project/Debug/BrowseInfo/source/main.xcl	e2d5be5dc6c82de6
+343	969	6487378209196959	E:/MCP/Mock/bootloader/project/Debug/BrowseInfo/bootloader.pbw	e5fa7f0ed78c258e
+7	149	6486345120000000	E:/MCP/Mock/bootloader/project/Debug/BrowseInfo/source/drivers/Clock.xcl	eac619c201427684
+1	168	6486345120000000	E:/MCP/Mock/bootloader/project/Debug/BrowseInfo/source/drivers/UART0.xcl	28ec3f8a4f2284
+159	217	6486345123171625	E:/MCP/Mock/bootloader/project/Debug/BrowseInfo/source/drivers/Clock.pbi	35d2f77b7b269f67
+179	244	6486345123451612	E:/MCP/Mock/bootloader/project/Debug/BrowseInfo/source/drivers/UART0.pbi	e2c26366904500f5
+25	284	6487215146167243	E:/MCP/Mock/bootloader/project/Debug/BrowseInfo/startup/system_MKL46Z4.pbi	5c05f203e6f863a9
+9	148	6486348830000000	E:/MCP/Mock/bootloader/project/Debug/BrowseInfo/drivers/UART0.xcl	62787e20178ddfab
+2	164	6486348830000000	E:/MCP/Mock/bootloader/project/Debug/BrowseInfo/drivers/Clock.xcl	785655c853e3bcd6
+29	272	6487215146097204	E:/MCP/Mock/bootloader/project/Debug/BrowseInfo/drivers/UART0.pbi	d3e1b0c4a4b72037
+3	233	6487215145727203	E:/MCP/Mock/bootloader/project/Debug/BrowseInfo/drivers/Clock.pbi	829e90ef8959d3bd
+288	334	6487215146777239	E:/MCP/Mock/bootloader/project/Debug/BrowseInfo/bootloader_part2.pbi	ae9f3b54b074ca2
+2	96	6487344577092527	E:/MCP/Mock/bootloader/project/Debug/BrowseInfo/drivers/Flash.pbi	b14a515d3700d11f
+102	136	6487344577502518	E:/MCP/Mock/bootloader/project/Debug/BrowseInfo/bootloader_part0.pbi	bb3b874cfac0c81a
