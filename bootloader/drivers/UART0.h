@@ -69,10 +69,9 @@ typedef struct
 /*******************************************************************************
  * API
  ******************************************************************************/
-
-int8_t UART_StrToInt(const uint8_t *str, uint32_t *num);
-
 void UART0_GetDefaultConfig(UART0_Config_Type *config);
+
+void UART0_Deinit(void);
 
 void UART0_SetBaudRate(uint32_t freqSoure, uint32_t baudrate);
 
@@ -149,6 +148,11 @@ static inline uint8_t UART0_GetOverrunFlag(void)
     return ((UART0->S1 & UART0_S1_OR_MASK) >> UART0_S1_OR_SHIFT);
 }
 
+static inline void UART0_ClearOverrunFlag(void)
+{
+    UART0->S1 |= UART0_S1_OR_MASK;
+}
+
 static inline uint8_t UART0_GetNoiseFlag(void)
 {
     return ((UART0->S1 & UART0_S1_NF_MASK) >> UART0_S1_NF_SHIFT);
@@ -163,5 +167,7 @@ static inline uint8_t UART0_GetParityErrorFlag(void)
 {
     return ((UART0->S1 & UART0_S1_PF_MASK) >> UART0_S1_PF_SHIFT);
 }
+
+__ramfunc void UART0_IRQHandlerInRAM(void);
 
 #endif /* __UART0_H__ */

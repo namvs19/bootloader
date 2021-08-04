@@ -70,7 +70,6 @@ typedef struct
  * API
  ******************************************************************************/
 
-int8_t UART_StrToInt(const uint8_t *str, uint32_t *num);
 
 void UART0_GetDefaultConfig(UART0_Config_Type *config);
 

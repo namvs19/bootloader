@@ -22,6 +22,19 @@ typedef enum
 
 } Clock_eFastIRCDivider_Type;
 
+typedef enum
+{
+    Clock_OSC_LowPrev = 0u,
+    Clock_OSC_HighPrev = 1u,
+    Clock_OSC_VeryHighPrev = 2u,
+} Clock_eOSC_FrevRange_Type;
+
+typedef enum
+{
+    Clock_eLowPower = 0u,
+    Clocl_eHighGain = 1u,
+} Clock_HighGainOSC_Type;
+
 /**
  * @brief Enable IRC clock source and set divider for fast RC
  *
@@ -55,9 +68,23 @@ static inline void Clock_EnableIRC(Clock_eInternalRC_Type source,
     }
 }
 
-void Clock_SwitchFEI(void);
-void Clock_SwitchFEE(void);
-void Clock_SwitchFBI(void);
-void Clock_SwitchFBE(void);
+static inline void Clock_EnableOSC(Clock_eOSC_FrevRange_Type prevRange, Clock_HighGainOSC_Type powerMode)
+{
+    /* Select frequency range */
+    MCG->C2 &= ~MCG_C2_RANGE0_MASK;
+    MCG->C2 |= MCG_C2_RANGE0(prevRange);
+
+    /**  */
+    MCG->C2 &= ~MCG_C2_HGO_MASK;
+    MCG->C2 |= MCG_C2_HGO(powerMode);
+
+    /* Select oscillator is external reference clock source */
+    MCG->C2 |= MCG_C2_EREFS0_MASK;
+
+    OSC0->CR |= OSC_CR_ERCLKEN_MASK;
+
+    while ((MCG->S & MCG_S_OSCINIT0_MASK) == 0u)
+        ;
+}
 
 #endif /* _CLOCK_H_ */

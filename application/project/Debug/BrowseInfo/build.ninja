@@ -29,6 +29,11 @@ build E$:\MCP\Mock\application\project\Debug\BrowseInfo\drivers\Clock.xcl : COMP
   flags = E$:\MCP\Mock\application\drivers\Clock.c -D CPU_MKL46Z256VLL4 -o E$:\MCP\Mock\application\project\Debug\Obj\drivers --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M0+ -e --fpu=None --dlib_config "D$:\Install\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -I E$:\MCP\Mock\application\project\..\CMSIS\Include\ -I E$:\MCP\Mock\application\project\..\MKL46Z4\ -I E$:\MCP\Mock\application\project\..\include\ -I E$:\MCP\Mock\application\project\..\source\ -I E$:\MCP\Mock\application\project\..\drivers\ -Ol --predef_macros E$:\MCP\Mock\application\project\Debug\BrowseInfo\drivers\Clock.tmp
   rspfile_name = E$:\MCP\Mock\application\project\Debug\BrowseInfo\drivers\Clock.xcl.rsp
 
+build E$:\MCP\Mock\application\project\Debug\BrowseInfo\drivers\Timer.xcl : COMPILER_XCL 
+  xclcommand = -source_file E$:\MCP\Mock\application\drivers\Timer.c -xcl_file E$:\MCP\Mock\application\project\Debug\BrowseInfo\drivers\Timer.xcl -macro_file E$:\MCP\Mock\application\project\Debug\BrowseInfo\drivers\Timer.tmp -icc_path "D$:\Install\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = E$:\MCP\Mock\application\drivers\Timer.c -D CPU_MKL46Z256VLL4 -o E$:\MCP\Mock\application\project\Debug\Obj\drivers --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M0+ -e --fpu=None --dlib_config "D$:\Install\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -I E$:\MCP\Mock\application\project\..\CMSIS\Include\ -I E$:\MCP\Mock\application\project\..\MKL46Z4\ -I E$:\MCP\Mock\application\project\..\include\ -I E$:\MCP\Mock\application\project\..\source\ -I E$:\MCP\Mock\application\project\..\drivers\ -Ol --predef_macros E$:\MCP\Mock\application\project\Debug\BrowseInfo\drivers\Timer.tmp
+  rspfile_name = E$:\MCP\Mock\application\project\Debug\BrowseInfo\drivers\Timer.xcl.rsp
+
 build E$:\MCP\Mock\application\project\Debug\BrowseInfo\drivers\UART0.xcl : COMPILER_XCL 
   xclcommand = -source_file E$:\MCP\Mock\application\drivers\UART0.c -xcl_file E$:\MCP\Mock\application\project\Debug\BrowseInfo\drivers\UART0.xcl -macro_file E$:\MCP\Mock\application\project\Debug\BrowseInfo\drivers\UART0.tmp -icc_path "D$:\Install\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
   flags = E$:\MCP\Mock\application\drivers\UART0.c -D CPU_MKL46Z256VLL4 -o E$:\MCP\Mock\application\project\Debug\Obj\drivers --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M0+ -e --fpu=None --dlib_config "D$:\Install\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -I E$:\MCP\Mock\application\project\..\CMSIS\Include\ -I E$:\MCP\Mock\application\project\..\MKL46Z4\ -I E$:\MCP\Mock\application\project\..\include\ -I E$:\MCP\Mock\application\project\..\source\ -I E$:\MCP\Mock\application\project\..\drivers\ -Ol --predef_macros E$:\MCP\Mock\application\project\Debug\BrowseInfo\drivers\UART0.tmp
@@ -48,6 +53,10 @@ build E$:\MCP\Mock\application\project\Debug\BrowseInfo\drivers\Clock.pbi : INDE
 E$:\MCP\Mock\application\drivers\Clock.c
   flags = -out=E$:\MCP\Mock\application\project\Debug\BrowseInfo\drivers\Clock.pbi -f E$:\MCP\Mock\application\project\Debug\BrowseInfo\drivers\Clock.xcl
 
+build E$:\MCP\Mock\application\project\Debug\BrowseInfo\drivers\Timer.pbi : INDEXER E$:\MCP\Mock\application\project\Debug\BrowseInfo\drivers\Timer.xcl |  $
+E$:\MCP\Mock\application\drivers\Timer.c
+  flags = -out=E$:\MCP\Mock\application\project\Debug\BrowseInfo\drivers\Timer.pbi -f E$:\MCP\Mock\application\project\Debug\BrowseInfo\drivers\Timer.xcl
+
 build E$:\MCP\Mock\application\project\Debug\BrowseInfo\drivers\UART0.pbi : INDEXER E$:\MCP\Mock\application\project\Debug\BrowseInfo\drivers\UART0.xcl |  $
 E$:\MCP\Mock\application\drivers\UART0.c
   flags = -out=E$:\MCP\Mock\application\project\Debug\BrowseInfo\drivers\UART0.pbi -f E$:\MCP\Mock\application\project\Debug\BrowseInfo\drivers\UART0.xcl
@@ -63,9 +72,19 @@ E$:\MCP\Mock\application\MKL46Z4\system_MKL46Z4.c
 build E$:\MCP\Mock\application\project\Debug\BrowseInfo\app.pbw : MAKEBROWSE E$:\MCP\Mock\application\project\Debug\BrowseInfo\app.pbd
   flags = E$:\MCP\Mock\application\project\Debug\BrowseInfo\app.pbd -output E$:\MCP\Mock\application\project\Debug\BrowseInfo\app.pbw
 
-build E$:\MCP\Mock\application\project\Debug\BrowseInfo\app.pbd : PDBLINK E$:\MCP\Mock\application\project\Debug\BrowseInfo\drivers\Clock.pbi |  $
-E$:\MCP\Mock\application\project\Debug\BrowseInfo\drivers\UART0.pbi $
-E$:\MCP\Mock\application\project\Debug\BrowseInfo\source\main.pbi $
-E$:\MCP\Mock\application\project\Debug\BrowseInfo\startup\system_MKL46Z4.pbi
-  flags = -M E$:\MCP\Mock\application\project\Debug\BrowseInfo\app.pbd E$:\MCP\Mock\application\project\Debug\BrowseInfo\drivers\Clock.pbi E$:\MCP\Mock\application\project\Debug\BrowseInfo\drivers\UART0.pbi E$:\MCP\Mock\application\project\Debug\BrowseInfo\source\main.pbi E$:\MCP\Mock\application\project\Debug\BrowseInfo\startup\system_MKL46Z4.pbi
+build E$:\MCP\Mock\application\project\Debug\BrowseInfo\app_part0.pbi : PDBLINK E$:\MCP\Mock\application\project\Debug\BrowseInfo\drivers\Clock.pbi |  $
+E$:\MCP\Mock\application\project\Debug\BrowseInfo\drivers\Timer.pbi
+  flags = -M E$:\MCP\Mock\application\project\Debug\BrowseInfo\app_part0.pbi E$:\MCP\Mock\application\project\Debug\BrowseInfo\drivers\Clock.pbi E$:\MCP\Mock\application\project\Debug\BrowseInfo\drivers\Timer.pbi
+
+build E$:\MCP\Mock\application\project\Debug\BrowseInfo\app_part1.pbi : PDBLINK E$:\MCP\Mock\application\project\Debug\BrowseInfo\drivers\UART0.pbi |  $
+E$:\MCP\Mock\application\project\Debug\BrowseInfo\source\main.pbi
+  flags = -M E$:\MCP\Mock\application\project\Debug\BrowseInfo\app_part1.pbi E$:\MCP\Mock\application\project\Debug\BrowseInfo\drivers\UART0.pbi E$:\MCP\Mock\application\project\Debug\BrowseInfo\source\main.pbi
+
+build E$:\MCP\Mock\application\project\Debug\BrowseInfo\app_part2.pbi : PDBLINK E$:\MCP\Mock\application\project\Debug\BrowseInfo\startup\system_MKL46Z4.pbi
+  flags = -M E$:\MCP\Mock\application\project\Debug\BrowseInfo\app_part2.pbi E$:\MCP\Mock\application\project\Debug\BrowseInfo\startup\system_MKL46Z4.pbi
+
+build E$:\MCP\Mock\application\project\Debug\BrowseInfo\app.pbd : PDBLINK E$:\MCP\Mock\application\project\Debug\BrowseInfo\app_part0.pbi |  $
+E$:\MCP\Mock\application\project\Debug\BrowseInfo\app_part1.pbi $
+E$:\MCP\Mock\application\project\Debug\BrowseInfo\app_part2.pbi
+  flags = -M E$:\MCP\Mock\application\project\Debug\BrowseInfo\app.pbd E$:\MCP\Mock\application\project\Debug\BrowseInfo\app_part0.pbi E$:\MCP\Mock\application\project\Debug\BrowseInfo\app_part1.pbi E$:\MCP\Mock\application\project\Debug\BrowseInfo\app_part2.pbi
 

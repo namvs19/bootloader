@@ -34,10 +34,25 @@ build E$:\MCP\Mock\bootloader\project\Debug\BrowseInfo\drivers\Flash.xcl : COMPI
   flags = E$:\MCP\Mock\bootloader\drivers\Flash.c -D CPU_MKL46Z256VLL4 -o E$:\MCP\Mock\bootloader\project\Debug\Obj\drivers --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M0+ -e --fpu=None --dlib_config "D$:\Install\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -I E$:\MCP\Mock\bootloader\project\..\CMSIS\Include\ -I E$:\MCP\Mock\bootloader\project\..\MKL46Z4\ -I E$:\MCP\Mock\bootloader\project\..\include\ -I E$:\MCP\Mock\bootloader\project\..\source\ -I E$:\MCP\Mock\bootloader\project\..\drivers\ -Ol --predef_macros E$:\MCP\Mock\bootloader\project\Debug\BrowseInfo\drivers\Flash.tmp
   rspfile_name = E$:\MCP\Mock\bootloader\project\Debug\BrowseInfo\drivers\Flash.xcl.rsp
 
+build E$:\MCP\Mock\bootloader\project\Debug\BrowseInfo\drivers\queue.xcl : COMPILER_XCL 
+  xclcommand = -source_file E$:\MCP\Mock\bootloader\include\queue.c -xcl_file E$:\MCP\Mock\bootloader\project\Debug\BrowseInfo\drivers\queue.xcl -macro_file E$:\MCP\Mock\bootloader\project\Debug\BrowseInfo\drivers\queue.tmp -icc_path "D$:\Install\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = E$:\MCP\Mock\bootloader\include\queue.c -D CPU_MKL46Z256VLL4 -o E$:\MCP\Mock\bootloader\project\Debug\Obj\drivers --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M0+ -e --fpu=None --dlib_config "D$:\Install\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -I E$:\MCP\Mock\bootloader\project\..\CMSIS\Include\ -I E$:\MCP\Mock\bootloader\project\..\MKL46Z4\ -I E$:\MCP\Mock\bootloader\project\..\include\ -I E$:\MCP\Mock\bootloader\project\..\source\ -I E$:\MCP\Mock\bootloader\project\..\drivers\ -Ol --predef_macros E$:\MCP\Mock\bootloader\project\Debug\BrowseInfo\drivers\queue.tmp
+  rspfile_name = E$:\MCP\Mock\bootloader\project\Debug\BrowseInfo\drivers\queue.xcl.rsp
+
 build E$:\MCP\Mock\bootloader\project\Debug\BrowseInfo\drivers\UART0.xcl : COMPILER_XCL 
   xclcommand = -source_file E$:\MCP\Mock\bootloader\drivers\UART0.c -xcl_file E$:\MCP\Mock\bootloader\project\Debug\BrowseInfo\drivers\UART0.xcl -macro_file E$:\MCP\Mock\bootloader\project\Debug\BrowseInfo\drivers\UART0.tmp -icc_path "D$:\Install\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
   flags = E$:\MCP\Mock\bootloader\drivers\UART0.c -D CPU_MKL46Z256VLL4 -o E$:\MCP\Mock\bootloader\project\Debug\Obj\drivers --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M0+ -e --fpu=None --dlib_config "D$:\Install\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -I E$:\MCP\Mock\bootloader\project\..\CMSIS\Include\ -I E$:\MCP\Mock\bootloader\project\..\MKL46Z4\ -I E$:\MCP\Mock\bootloader\project\..\include\ -I E$:\MCP\Mock\bootloader\project\..\source\ -I E$:\MCP\Mock\bootloader\project\..\drivers\ -Ol --predef_macros E$:\MCP\Mock\bootloader\project\Debug\BrowseInfo\drivers\UART0.tmp
   rspfile_name = E$:\MCP\Mock\bootloader\project\Debug\BrowseInfo\drivers\UART0.xcl.rsp
+
+build E$:\MCP\Mock\bootloader\project\Debug\BrowseInfo\includes\srec.xcl : COMPILER_XCL 
+  xclcommand = -source_file E$:\MCP\Mock\bootloader\include\srec.c -xcl_file E$:\MCP\Mock\bootloader\project\Debug\BrowseInfo\includes\srec.xcl -macro_file E$:\MCP\Mock\bootloader\project\Debug\BrowseInfo\includes\srec.tmp -icc_path "D$:\Install\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = E$:\MCP\Mock\bootloader\include\srec.c -D CPU_MKL46Z256VLL4 -o E$:\MCP\Mock\bootloader\project\Debug\Obj\includes --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M0+ -e --fpu=None --dlib_config "D$:\Install\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -I E$:\MCP\Mock\bootloader\project\..\CMSIS\Include\ -I E$:\MCP\Mock\bootloader\project\..\MKL46Z4\ -I E$:\MCP\Mock\bootloader\project\..\include\ -I E$:\MCP\Mock\bootloader\project\..\source\ -I E$:\MCP\Mock\bootloader\project\..\drivers\ -Ol --predef_macros E$:\MCP\Mock\bootloader\project\Debug\BrowseInfo\includes\srec.tmp
+  rspfile_name = E$:\MCP\Mock\bootloader\project\Debug\BrowseInfo\includes\srec.xcl.rsp
+
+build E$:\MCP\Mock\bootloader\project\Debug\BrowseInfo\includes\std_lib.xcl : COMPILER_XCL 
+  xclcommand = -source_file E$:\MCP\Mock\bootloader\include\std_lib.c -xcl_file E$:\MCP\Mock\bootloader\project\Debug\BrowseInfo\includes\std_lib.xcl -macro_file E$:\MCP\Mock\bootloader\project\Debug\BrowseInfo\includes\std_lib.tmp -icc_path "D$:\Install\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = E$:\MCP\Mock\bootloader\include\std_lib.c -D CPU_MKL46Z256VLL4 -o E$:\MCP\Mock\bootloader\project\Debug\Obj\includes --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M0+ -e --fpu=None --dlib_config "D$:\Install\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -I E$:\MCP\Mock\bootloader\project\..\CMSIS\Include\ -I E$:\MCP\Mock\bootloader\project\..\MKL46Z4\ -I E$:\MCP\Mock\bootloader\project\..\include\ -I E$:\MCP\Mock\bootloader\project\..\source\ -I E$:\MCP\Mock\bootloader\project\..\drivers\ -Ol --predef_macros E$:\MCP\Mock\bootloader\project\Debug\BrowseInfo\includes\std_lib.tmp
+  rspfile_name = E$:\MCP\Mock\bootloader\project\Debug\BrowseInfo\includes\std_lib.xcl.rsp
 
 build E$:\MCP\Mock\bootloader\project\Debug\BrowseInfo\source\main.xcl : COMPILER_XCL 
   xclcommand = -source_file E$:\MCP\Mock\bootloader\source\main.c -xcl_file E$:\MCP\Mock\bootloader\project\Debug\BrowseInfo\source\main.xcl -macro_file E$:\MCP\Mock\bootloader\project\Debug\BrowseInfo\source\main.tmp -icc_path "D$:\Install\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
@@ -57,9 +72,21 @@ build E$:\MCP\Mock\bootloader\project\Debug\BrowseInfo\drivers\Flash.pbi : INDEX
 E$:\MCP\Mock\bootloader\drivers\Flash.c
   flags = -out=E$:\MCP\Mock\bootloader\project\Debug\BrowseInfo\drivers\Flash.pbi -f E$:\MCP\Mock\bootloader\project\Debug\BrowseInfo\drivers\Flash.xcl
 
+build E$:\MCP\Mock\bootloader\project\Debug\BrowseInfo\drivers\queue.pbi : INDEXER E$:\MCP\Mock\bootloader\project\Debug\BrowseInfo\drivers\queue.xcl |  $
+E$:\MCP\Mock\bootloader\include\queue.c
+  flags = -out=E$:\MCP\Mock\bootloader\project\Debug\BrowseInfo\drivers\queue.pbi -f E$:\MCP\Mock\bootloader\project\Debug\BrowseInfo\drivers\queue.xcl
+
 build E$:\MCP\Mock\bootloader\project\Debug\BrowseInfo\drivers\UART0.pbi : INDEXER E$:\MCP\Mock\bootloader\project\Debug\BrowseInfo\drivers\UART0.xcl |  $
 E$:\MCP\Mock\bootloader\drivers\UART0.c
   flags = -out=E$:\MCP\Mock\bootloader\project\Debug\BrowseInfo\drivers\UART0.pbi -f E$:\MCP\Mock\bootloader\project\Debug\BrowseInfo\drivers\UART0.xcl
+
+build E$:\MCP\Mock\bootloader\project\Debug\BrowseInfo\includes\srec.pbi : INDEXER E$:\MCP\Mock\bootloader\project\Debug\BrowseInfo\includes\srec.xcl |  $
+E$:\MCP\Mock\bootloader\include\srec.c
+  flags = -out=E$:\MCP\Mock\bootloader\project\Debug\BrowseInfo\includes\srec.pbi -f E$:\MCP\Mock\bootloader\project\Debug\BrowseInfo\includes\srec.xcl
+
+build E$:\MCP\Mock\bootloader\project\Debug\BrowseInfo\includes\std_lib.pbi : INDEXER E$:\MCP\Mock\bootloader\project\Debug\BrowseInfo\includes\std_lib.xcl |  $
+E$:\MCP\Mock\bootloader\include\std_lib.c
+  flags = -out=E$:\MCP\Mock\bootloader\project\Debug\BrowseInfo\includes\std_lib.pbi -f E$:\MCP\Mock\bootloader\project\Debug\BrowseInfo\includes\std_lib.xcl
 
 build E$:\MCP\Mock\bootloader\project\Debug\BrowseInfo\source\main.pbi : INDEXER E$:\MCP\Mock\bootloader\project\Debug\BrowseInfo\source\main.xcl |  $
 E$:\MCP\Mock\bootloader\source\main.c
@@ -73,15 +100,18 @@ build E$:\MCP\Mock\bootloader\project\Debug\BrowseInfo\bootloader.pbw : MAKEBROW
   flags = E$:\MCP\Mock\bootloader\project\Debug\BrowseInfo\bootloader.pbd -output E$:\MCP\Mock\bootloader\project\Debug\BrowseInfo\bootloader.pbw
 
 build E$:\MCP\Mock\bootloader\project\Debug\BrowseInfo\bootloader_part0.pbi : PDBLINK E$:\MCP\Mock\bootloader\project\Debug\BrowseInfo\drivers\Clock.pbi |  $
-E$:\MCP\Mock\bootloader\project\Debug\BrowseInfo\drivers\Flash.pbi
-  flags = -M E$:\MCP\Mock\bootloader\project\Debug\BrowseInfo\bootloader_part0.pbi E$:\MCP\Mock\bootloader\project\Debug\BrowseInfo\drivers\Clock.pbi E$:\MCP\Mock\bootloader\project\Debug\BrowseInfo\drivers\Flash.pbi
+E$:\MCP\Mock\bootloader\project\Debug\BrowseInfo\drivers\Flash.pbi $
+E$:\MCP\Mock\bootloader\project\Debug\BrowseInfo\drivers\queue.pbi
+  flags = -M E$:\MCP\Mock\bootloader\project\Debug\BrowseInfo\bootloader_part0.pbi E$:\MCP\Mock\bootloader\project\Debug\BrowseInfo\drivers\Clock.pbi E$:\MCP\Mock\bootloader\project\Debug\BrowseInfo\drivers\Flash.pbi E$:\MCP\Mock\bootloader\project\Debug\BrowseInfo\drivers\queue.pbi
 
 build E$:\MCP\Mock\bootloader\project\Debug\BrowseInfo\bootloader_part1.pbi : PDBLINK E$:\MCP\Mock\bootloader\project\Debug\BrowseInfo\drivers\UART0.pbi |  $
-E$:\MCP\Mock\bootloader\project\Debug\BrowseInfo\source\main.pbi
-  flags = -M E$:\MCP\Mock\bootloader\project\Debug\BrowseInfo\bootloader_part1.pbi E$:\MCP\Mock\bootloader\project\Debug\BrowseInfo\drivers\UART0.pbi E$:\MCP\Mock\bootloader\project\Debug\BrowseInfo\source\main.pbi
+E$:\MCP\Mock\bootloader\project\Debug\BrowseInfo\includes\srec.pbi $
+E$:\MCP\Mock\bootloader\project\Debug\BrowseInfo\includes\std_lib.pbi
+  flags = -M E$:\MCP\Mock\bootloader\project\Debug\BrowseInfo\bootloader_part1.pbi E$:\MCP\Mock\bootloader\project\Debug\BrowseInfo\drivers\UART0.pbi E$:\MCP\Mock\bootloader\project\Debug\BrowseInfo\includes\srec.pbi E$:\MCP\Mock\bootloader\project\Debug\BrowseInfo\includes\std_lib.pbi
 
-build E$:\MCP\Mock\bootloader\project\Debug\BrowseInfo\bootloader_part2.pbi : PDBLINK E$:\MCP\Mock\bootloader\project\Debug\BrowseInfo\startup\system_MKL46Z4.pbi
-  flags = -M E$:\MCP\Mock\bootloader\project\Debug\BrowseInfo\bootloader_part2.pbi E$:\MCP\Mock\bootloader\project\Debug\BrowseInfo\startup\system_MKL46Z4.pbi
+build E$:\MCP\Mock\bootloader\project\Debug\BrowseInfo\bootloader_part2.pbi : PDBLINK E$:\MCP\Mock\bootloader\project\Debug\BrowseInfo\source\main.pbi |  $
+E$:\MCP\Mock\bootloader\project\Debug\BrowseInfo\startup\system_MKL46Z4.pbi
+  flags = -M E$:\MCP\Mock\bootloader\project\Debug\BrowseInfo\bootloader_part2.pbi E$:\MCP\Mock\bootloader\project\Debug\BrowseInfo\source\main.pbi E$:\MCP\Mock\bootloader\project\Debug\BrowseInfo\startup\system_MKL46Z4.pbi
 
 build E$:\MCP\Mock\bootloader\project\Debug\BrowseInfo\bootloader.pbd : PDBLINK E$:\MCP\Mock\bootloader\project\Debug\BrowseInfo\bootloader_part0.pbi |  $
 E$:\MCP\Mock\bootloader\project\Debug\BrowseInfo\bootloader_part1.pbi $

@@ -812,6 +812,17 @@ extern "C"
       __NOP();
     }
   }
+
+  static inline void NVIC_DisableAllIRQ(void)
+  {
+    NVIC->ICER = 0xFFFFFFFFu;
+  }
+
+  static inline void NVIC_ClearAllPendingIRQ(void)
+  {
+    NVIC->ICPR = 0xFFFFFFFFu;
+  }
+
   /*@} end of CMSIS_Core_NVICFunctions */
 
   /* ##################################    SysTick function  ############################################ */

@@ -3,7 +3,8 @@
  * Inclunum
  ******************************************************************************/
 #include "UART0.h"
-
+#include "queue.h"
+#include "std_lib.h"
 /*******************************************************************************
  * Definitions
  ******************************************************************************/
@@ -29,8 +30,7 @@ static void UART_GetCoeffBaudrate(uint32_t freqSoure,
                                   uint32_t baudrate,
                                   UART0_BaudrateCoeff_Type *coeff);
 
-static uint32_t strlen(const uint8_t *str);
-
+static uint8_t UART_StrToInt(const uint8_t *str, uint32_t *num);
 /*******************************************************************************
  * API
  ******************************************************************************/
@@ -122,6 +122,40 @@ void UART0_Init(UART0_Config_Type config)
     UART0->C3 |= UART0_C3_PEIE(config.enableParityErrorInterrupt);
 }
 
+void UART0_Deinit(void)
+{
+    UART0_DisableTx();
+    UART0_DisableRx();
+
+    /** Clear current function */
+    PORTA->PCR[UART0_PIN_TX] &= ~PORT_PCR_MUX_MASK;
+    PORTA->PCR[UART0_PIN_RX] &= ~PORT_PCR_MUX_MASK;
+
+    UART0->BDH &= ~UART0_BDH_SBNS_MASK;
+
+    /** Set default stop bit */
+    UART0->C4 &= ~UART0_C4_M10_MASK;
+    UART0->C1 &= ~UART0_C1_M_MASK;
+
+    /** Set default parity bit */
+    UART0->C1 &= ~(3u);
+
+    UART0->C2 &= ~(UART0_C2_TIE_MASK |
+                   UART0_C2_TCIE_MASK |
+                   UART0_C2_RIE_MASK |
+                   UART0_C2_ILIE_MASK);
+
+    UART0->C3 &= ~(UART0_C3_ORIE_MASK |
+                   UART0_C3_NEIE_MASK |
+                   UART0_C3_FEIE_MASK |
+                   UART0_C3_PEIE_MASK);
+
+    /** Enable clock for PORTA */
+    SIM->SCGC5 &= ~SIM_SCGC5_PORTA_MASK;
+    /** Enable clock for UART0 module*/
+    SIM->SCGC4 &= ~SIM_SCGC4_UART0_MASK;
+}
+
 static void UART_GetCoeffBaudrate(uint32_t freqSoure,
                                   uint32_t baudrate,
                                   UART0_BaudrateCoeff_Type *coeff)
@@ -134,9 +168,9 @@ static void UART_GetCoeffBaudrate(uint32_t freqSoure,
 
     uint32_t u32Multiplier = freqSoure / baudrate;
 
-    uint16_t u16ErrorMin = baudrate;
-    uint16_t u16Error = 0;
-    uint16_t u16Error_1 = 0;
+    uint32_t u32ErrorMin = baudrate;
+    uint32_t u32Error = 0;
+    uint32_t u32Error_1 = 0;
 
     for (u8CurrAcquisitionRate = UART_OSR_MIN + 1u; u8CurrAcquisitionRate <= UART_OSR_MAX; u8CurrAcquisitionRate++)
     {
@@ -148,38 +182,38 @@ static void UART_GetCoeffBaudrate(uint32_t freqSoure,
 
         if (u32CurrBaudrate > baudrate)
         {
-            u16Error = u32CurrBaudrate - baudrate;
+            u32Error = u32CurrBaudrate - baudrate;
         }
         else
         {
-            u16Error = baudrate - u32CurrBaudrate;
+            u32Error = baudrate - u32CurrBaudrate;
         }
 
         if (u32CurrBaudrate_1 > baudrate)
         {
-            u16Error_1 = u32CurrBaudrate_1 - baudrate;
+            u32Error_1 = u32CurrBaudrate_1 - baudrate;
         }
         else
         {
-            u16Error_1 = baudrate - u32CurrBaudrate_1;
+            u32Error_1 = baudrate - u32CurrBaudrate_1;
         }
 
-        if (u16Error_1 < u16Error)
+        if (u32Error_1 < u32Error)
         {
-            u16Error = u16Error_1;
+            u32Error = u32Error_1;
             u16CurrBaudrateDivisor = u16CurrBaudrateDivisor_1;
         }
 
-        if ((u16Error <= u16ErrorMin) && (u16CurrBaudrateDivisor < UART_SBR_MAX))
+        if ((u32Error <= u32ErrorMin) && (u16CurrBaudrateDivisor < UART_SBR_MAX))
         {
             coeff->u16BaudrateDivisor = u16CurrBaudrateDivisor;
             coeff->u8AcquisitionRate = u8CurrAcquisitionRate;
-            u16ErrorMin = u16Error;
+            u32ErrorMin = u32Error;
         }
     }
 }
 
-int8_t UART_StrToInt(const uint8_t *str, uint32_t *num)
+static uint8_t UART_StrToInt(const uint8_t *str, uint32_t *num)
 {
     bool_t IsValid = true;
     uint8_t index = 0;
@@ -312,14 +346,36 @@ void UART_ReadNumeric(uint32_t *number)
     UART_StrToInt(buffer, number);
 }
 
-static uint32_t strlen(const uint8_t *str)
+/**----------------------------------------------------------------------------
+ * Function name: UART0_IRQHandlerInRAM
+ * Description: Interrupt handler for UART0 run in RAM
+ *----------------------------------------------------------------------------*/
+__ramfunc void UART0_IRQHandlerInRAM(void)
 {
-    uint32_t len = 0;
+    static uint8_t s_index = 0;
+    uint8_t charBuffer;
+    uint8_t queueBack = queue_getBack();
 
-    while ((*(str + len) != UART_ENDINGCHAR) && (*(str + len) != '\0'))
+    
+
+    if ((UART0->S1 & UART0_S1_RDRF_MASK) == UART0_S1_RDRF_MASK)
     {
-        len++;
-    }
+        charBuffer = UART0->D;
 
-    return len;
+        queue[queueBack].record[s_index++] = charBuffer;
+
+        if (charBuffer == '\n')
+        {
+            if (queue_enqueue())
+            {
+                /** If queue free */
+                s_index = 0;
+            }
+            else
+            {
+                /** Disable receive interrupt */
+                UART0->C2 &= ~UART0_C2_RE_MASK;
+            }
+        }
+    }
 }

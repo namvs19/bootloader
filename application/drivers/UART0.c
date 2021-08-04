@@ -31,6 +31,8 @@ static void UART_GetCoeffBaudrate(uint32_t freqSoure,
 
 static uint32_t strlen(const uint8_t *str);
 
+int8_t UART_StrToInt(const uint8_t *str, uint32_t *num);
+
 /*******************************************************************************
  * API
  ******************************************************************************/
@@ -318,7 +320,7 @@ static uint32_t strlen(const uint8_t *str)
 
     while ((*(str + len) != UART_ENDINGCHAR) && (*(str + len) != '\0'))
     {
-            len++;
+        len++;
     }
 
     return len;

@@ -14,4 +14,7 @@ E:\MCP\Mock\bootloader\project\Debug\BrowseInfo\drivers\UART0.pbi: \
   E:\MCP\Mock\bootloader\project\..\CMSIS\Include\core_cmFunc.h \
   E:\MCP\Mock\bootloader\project\..\MKL46Z4\system_MKL46Z4.h \
   E:\MCP\Mock\bootloader\project\..\include\std_bool.h \
-  E:\MCP\Mock\bootloader\project\..\include\std_type.h
+  E:\MCP\Mock\bootloader\project\..\include\std_type.h \
+  E:\MCP\Mock\bootloader\project\..\include\queue.h \
+  E:\MCP\Mock\bootloader\project\..\include\srec.h \
+  E:\MCP\Mock\bootloader\project\..\include\std_lib.h

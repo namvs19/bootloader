@@ -1,0 +1,47 @@
+{
+    "files.associations": {
+        "std_type.h": "c",
+        "board.h": "c",
+        "uart0.h": "c",
+        "staticlinkedlist.h": "c",
+        "queue.h": "c",
+        "srec.h": "c",
+        "hardware_mkl46z4.h": "c",
+        "bit": "c",
+        "compare": "c",
+        "cstddef": "c",
+        "deque": "c",
+        "limits": "c",
+        "type_traits": "c",
+        "vector": "c",
+        "xutility": "c",
+        "xmemory": "c",
+        "tuple": "c",
+        "utility": "c",
+        "xtr1common": "c",
+        "clock.h": "c",
+        "flash.h": "c",
+        "pit.h": "c",
+        "bootloader.h": "c",
+        "std_lib.h": "c"
+    },
+    "configurations": [
+        {
+            "name": "Windows",
+            "includePath": [
+                "../application/cmsis/Include",
+                "../application/drivers",
+                "../application/MKL46Z4",
+                "../application/include",
+                "../application/source",
+
+                "../bootloader/cmsis/Include",
+                "../bootloader/drivers",
+                "../bootloader/MKL46Z4",
+                "../bootloader/include",
+                "../bootloader/source",
+            ]
+        }
+    ],
+    "C_Cpp.errorSquiggles": "Disabled"
+}

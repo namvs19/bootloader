@@ -2102,7 +2102,19 @@
             <name>$PROJ_DIR$\..\drivers\Flash.c</name>
         </file>
         <file>
+            <name>$PROJ_DIR$\..\include\queue.c</name>
+        </file>
+        <file>
             <name>$PROJ_DIR$\..\drivers\UART0.c</name>
+        </file>
+    </group>
+    <group>
+        <name>includes</name>
+        <file>
+            <name>$PROJ_DIR$\..\include\srec.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\include\std_lib.c</name>
         </file>
     </group>
     <group>

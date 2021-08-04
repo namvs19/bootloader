@@ -1,5 +1,6 @@
 E:\MCP\Mock\bootloader\project\Debug\BrowseInfo\drivers\Clock.pbi: \
   E:\MCP\Mock\bootloader\drivers\Clock.c \
+  E:\MCP\Mock\bootloader\drivers\Clock.h \
   E:\MCP\Mock\bootloader\project\..\MKL46Z4\hardware_MKL46Z4.h \
   E:\MCP\Mock\bootloader\project\..\CMSIS\Include\core_cm0plus.h \
   E:\MCP\Mock\bootloader\project\..\include\std_type.h \

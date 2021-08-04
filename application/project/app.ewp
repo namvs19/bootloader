@@ -2096,7 +2096,7 @@
     <group>
         <name>drivers</name>
         <file>
-            <name>$PROJ_DIR$\..\drivers\Clock.c</name>
+            <name>$PROJ_DIR$\..\drivers\Timer.c</name>
         </file>
         <file>
             <name>$PROJ_DIR$\..\drivers\UART0.c</name>

@@ -2,12 +2,12 @@
 /*-Editor annotation file-*/
 /* IcfEditorFile="$TOOLKIT_DIR$\config\ide\IcfEditor\cortex_v1_1.xml" */
 /*-Specials-*/
-define symbol __ICFEDIT_intvec_start__ = 0x00000000;
+define symbol __ICFEDIT_intvec_start__ = 0xa000;
 /*-Memory Regions-*/
-define symbol __ICFEDIT_region_IROM1_start__ = 0x00000000;
-define symbol __ICFEDIT_region_IROM1_end__   = 0x000003ff;
-define symbol __ICFEDIT_region_IROM2_start__ = 0x00000410;
-define symbol __ICFEDIT_region_IROM2_end__   = 0x00009fff;
+define symbol __ICFEDIT_region_IROM1_start__ = 0xa000;
+define symbol __ICFEDIT_region_IROM1_end__   = 0x0003ffff;
+define symbol __ICFEDIT_region_IROM2_start__ = 0;
+define symbol __ICFEDIT_region_IROM2_end__   = 0;
 
 define symbol __ICFEDIT_region_APP_start__ = 0x0000A000;
 define symbol __ICFEDIT_region_APP_end__   = 0x0003ffff;
@@ -81,4 +81,3 @@ place in EROM_region  { readonly section application_specific_ro };
 place in IRAM_region  { readwrite, block CSTACK, block HEAP };
 place in ERAM_region  { readwrite section application_specific_rw };
 place in Config_region{section FlashConfig};
-

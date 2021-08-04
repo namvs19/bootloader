@@ -79,4 +79,23 @@ static inline void Board_SwitchInit(void)
     GPIO_PinInit(GPIOC, BOARD_SW2_PIN, GPIO_Input);
 }
 
+static inline void Board_SwitchDeinit(void)
+{
+    SIM->SCGC5 &= ~SIM_SCGC5_PORTC_MASK;
+
+    PORT_SetMux(BOARD_SW_PORT, BOARD_SW1_PIN, PORT_Mux_disable);
+    PORT_SetMux(BOARD_SW_PORT, BOARD_SW2_PIN, PORT_Mux_disable);
+}
+
+static inline void Board_LedDeinit(void)
+{
+    SIM->SCGC5 &= ~SIM_SCGC5_PORTD_MASK;
+    SIM->SCGC5 &= ~SIM_SCGC5_PORTE_MASK;
+
+    PORT_SetMux(BOARD_RED_LED_PORT, BOARD_RED_LED_PIN, PORT_Mux_disable);
+    PORT_SetMux(BOARD_GREEN_LED_PORT, BOARD_GREEN_LED_PIN, PORT_Mux_disable);
+
+    GPIO_PinInit(BOARD_RED_LED_GPIO, BOARD_RED_LED_PIN, GPIO_Input);
+    GPIO_PinInit(BOARD_GREEN_LED_GPIO, BOARD_GREEN_LED_PIN, GPIO_Input);
+}
 #endif /* _BOARD_H_ */

@@ -1,10 +1,12 @@
 E:\MCP\Mock\bootloader\project\Debug\BrowseInfo\source\main.pbi: \
+  E:\MCP\Mock\bootloader\project\..\include\queue.h \
+  E:\MCP\Mock\bootloader\project\..\include\std_lib.h \
+  E:\MCP\Mock\bootloader\project\..\include\srec.h \
+  E:\MCP\Mock\bootloader\project\..\drivers\Clock.h \
+  E:\MCP\Mock\bootloader\project\..\drivers\Flash.h \
   E:\MCP\Mock\bootloader\project\..\include\std_bool.h \
   E:\MCP\Mock\bootloader\project\..\drivers\UART0.h \
   E:\MCP\Mock\bootloader\project\..\drivers\PORT.h \
-  E:\MCP\Mock\bootloader\project\..\drivers\GPIO.h \
-  E:\MCP\Mock\bootloader\project\..\drivers\Board.h \
-  E:\MCP\Mock\bootloader\project\..\drivers\PIT.h \
   E:\MCP\Mock\bootloader\project\..\MKL46Z4\system_MKL46Z4.h \
   E:\MCP\Mock\bootloader\project\..\CMSIS\Include\core_cmFunc.h \
   D:\Install\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\DLib_Product.h \
@@ -17,5 +19,7 @@ E:\MCP\Mock\bootloader\project\Debug\BrowseInfo\source\main.pbi: \
   E:\MCP\Mock\bootloader\project\..\include\std_type.h \
   E:\MCP\Mock\bootloader\project\..\CMSIS\Include\core_cm0plus.h \
   E:\MCP\Mock\bootloader\project\..\MKL46Z4\hardware_MKL46Z4.h \
-  E:\MCP\Mock\bootloader\project\..\drivers\Flash.h \
+  E:\MCP\Mock\bootloader\project\..\drivers\GPIO.h \
+  E:\MCP\Mock\bootloader\project\..\drivers\Board.h \
+  E:\MCP\Mock\bootloader\source\Bootloader.h \
   E:\MCP\Mock\bootloader\source\main.c
